@@ -10,8 +10,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
-  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  url      = env("POSTGRES_URL")
 }
 
 model Account {
@@ -77,7 +76,6 @@ model Artikel{
   body String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  userId String
 }
 
 model Class {
